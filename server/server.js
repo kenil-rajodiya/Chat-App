@@ -1,5 +1,5 @@
 import express from "express"
-import {Server} from 'socket.io'
+import { Server } from 'socket.io'
 import 'dotenv/config'
 import cors from "cors"
 import http from "http"
@@ -31,15 +31,15 @@ io.on("connection", (socket) => {
     if (userId) {
         userSocketMap[userId] = socket.id
     }
-    
+
     // emit online users to all connected client
     io.emit("getOnlineUsers", Object.keys(userSocketMap))
-    
+
     socket.on("disconnect", () => {
         console.log("User Disconnected", userId);
         delete userSocketMap[userId];
         io.emit("getOnlineUsers", Object.keys(userSocketMap));
-        
+
     });
 
     socket.on("sendGroupMessage", (message) => {
@@ -48,17 +48,17 @@ io.on("connection", (socket) => {
         // Emit to everyone in the same group room
         io.to(message.groupId).emit("receiveGroupMessage", message);
     });
-      
+
     socket.on("joinGroup", (groupId) => {
         console.log(`User joined group room  ${groupId}`);
         socket.join(groupId);
-        
+
     })
-    
+
     socket.on("leaveGroup", (groupId) => {
         console.log(`User left  group room :  ${groupId}`);
         socket.leave(groupId);
-        
+
     })
 
 })
@@ -69,18 +69,22 @@ app.use(express.json({ limit: "4mb" }))
 app.use(cors())
 
 // Route setup
-app.use("/api/status", (req,res) => {
+app.use("/api/status", (req, res) => {
     res.send("Server is running")
 })
 
 app.use('/api/auth', userRouter);
 app.use('/api/messages', messageRouter)
 app.use('/api/group', groupRouter);
-app.use('/api/group-messages',groupMessageRouter)
+app.use('/api/group-messages', groupMessageRouter)
 
 // Connect to mongodb
 await connectDB();
 
-const PORT = process.env.PORT || 5000
-server.listen(PORT , () => console.log("Server is running on port 5000"))
+if (process.env.NODE_ENV !== "production") {
+    const PORT = process.env.PORT || 5000
+    server.listen(PORT, () => console.log("Server is running on port 5000"))
+}
 
+// export server for vercel
+export default server;
