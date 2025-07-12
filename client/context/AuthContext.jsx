@@ -135,7 +135,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 
-const backendUrl = "http://localhost:5000";
+const backendUrl = "https://chat-app-backend-iota-rose.vercel.app/";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
