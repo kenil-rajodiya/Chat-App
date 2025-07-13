@@ -10,14 +10,13 @@ import groupRouter from "./routes/group.router.js"
 import groupMessageRouter from "./routes/groupMessage.router.js"
 
 // Create Express app and HTTP server
-
 const app = express();
 const server = http.createServer(app);
 
 // Initialization of socket.io server
 export const io = new Server(server, {
     cors: {
-        origin: "*"
+        origin: "https://chat-app-frontend-ten-eta.vercel.app"
     }
 })
 
@@ -39,30 +38,23 @@ io.on("connection", (socket) => {
         console.log("User Disconnected", userId);
         delete userSocketMap[userId];
         io.emit("getOnlineUsers", Object.keys(userSocketMap));
-
     });
 
     socket.on("sendGroupMessage", (message) => {
         console.log("New group message received", message);
-
-        // Emit to everyone in the same group room
         io.to(message.groupId).emit("receiveGroupMessage", message);
     });
 
     socket.on("joinGroup", (groupId) => {
         console.log(`User joined group room  ${groupId}`);
         socket.join(groupId);
-
     })
 
     socket.on("leaveGroup", (groupId) => {
         console.log(`User left  group room :  ${groupId}`);
         socket.leave(groupId);
-
     })
-
 })
-
 
 // middlewares
 app.use(express.json({ limit: "4mb" }))
@@ -81,10 +73,9 @@ app.use('/api/group-messages', groupMessageRouter)
 // Connect to mongodb
 await connectDB();
 
-if (process.env.NODE_ENV !== "production") {
-    const PORT = process.env.PORT || 5000
-    server.listen(PORT, () => console.log("Server is running on port 5000"))
-}
+// ✅ Always start the server
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 
-// export server for vercel
+// Export for testing
 export default server;
