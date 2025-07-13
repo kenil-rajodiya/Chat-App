@@ -15,17 +15,17 @@ import CreateGroup from "./components/CreateGroup";
 
 export default function App() {
   return (
-    <div className="bg-[url('./bgImage.svg')] bg-contain">
+    <div className="bg-[url('client\public\bgImage.svg')] bg-contain">
       <Toaster />
       <Routes>
         {/* Protected */}
         <Route path="/" element={<ProtectedRoute />}>
-          <Route index           element={<HomePage />} />
-          <Route path="profile"  element={<ProfilePage />} />
-          <Route path="group"    element={<GroupHomePage />} />
-          <Route path="members"  element={<GroupMembers />} />
+          <Route index element={<HomePage />} />
+          <Route path="profile" element={<ProfilePage />} />
+          <Route path="group" element={<GroupHomePage />} />
+          <Route path="members" element={<GroupMembers />} />
           <Route path="admin" element={<GroupAdminPanel />} />
-          <Route path="createGroup" element={<CreateGroup/>} />
+          <Route path="createGroup" element={<CreateGroup />} />
         </Route>
 
         {/* Public */}
