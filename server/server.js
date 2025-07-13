@@ -17,7 +17,7 @@ const server = http.createServer(app);
 // Initialization of socket.io server
 export const io = new Server(server, {
     cors: {
-        origin: "https://chat-app-frontend-ten-eta.vercel.app"
+        origin: "*"
     }
 })
 
