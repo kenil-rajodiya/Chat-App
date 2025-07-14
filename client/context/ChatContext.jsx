@@ -24,7 +24,7 @@ export const ChatProvider = ({ children }) => {
     try {
       const response = await axiosInstance.get("/api/messages/users");
       const data = response.data.data;
-      // console.log(data);
+      console.log(data);
 
       if (response.data.success) {
         setUsers(data.filteredUsers);
