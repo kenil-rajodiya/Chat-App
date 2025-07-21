@@ -40,6 +40,30 @@ A powerful full-stack real-time messaging app built with the **MERN stack (Mongo
 
 ---
 
+## 🖼️ Screenshots
+
+### 1. Register Page
+![Login](./assets/register.png)
+
+### 2. Login Page
+![Home](./assets/login.png)
+
+### 3. Profile Page
+![Profile](./assets/editProfile.png)
+
+### 4. Home Page
+![Home](./assets/chat.png)
+
+### 5. Group Chat
+![Group Chat](./assets/groupChat.png)
+
+### 6. Group Members Panel
+![Group Members](./assets/members.png)
+
+### 7. Admin Controls
+![Admin Panel](./assets/adminPanel.png)
+
+
 ## ⚙️ Getting Started
 
 ### 1️⃣ Clone the Repository
