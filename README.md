@@ -4,6 +4,11 @@ A powerful full-stack real-time messaging app built with the **MERN stack (Mongo
 
 
 ---
+## 🚀 Live Preview
+
+You can try the live version of this project here:
+
+🔗 [Click to Visit the Live App](https://chat-app-frontend-ten-eta.vercel.app/login)
 
 ## 🚀 Features
 
