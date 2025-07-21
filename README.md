@@ -2,7 +2,6 @@
 
 A powerful full-stack real-time messaging app built with the **MERN stack (MongoDB, Express, React, Node.js)** and **Socket.IO**. It supports one-on-one and group chats, live online user tracking, typing indicators, profile management, and more — all in a beautifully responsive UI.
 
-![Chat App Preview](./preview.png)
 
 ---
 
@@ -43,25 +42,26 @@ A powerful full-stack real-time messaging app built with the **MERN stack (Mongo
 ## 🖼️ Screenshots
 
 ### 1. Register Page
-![Login](./assets/register.png)
+![Login](./client/public/register.png)
+
 
 ### 2. Login Page
-![Home](./assets/login.png)
+![Home](./client/public/login.png)
 
 ### 3. Profile Page
-![Profile](./assets/editProfile.png)
+![Profile](/client/public/editProfile.png)
 
 ### 4. Home Page
-![Home](./assets/chat.png)
+![Home](/client/public/chat.png)
 
 ### 5. Group Chat
-![Group Chat](./assets/groupChat.png)
+![Group Chat](/client/public/groupChat.png)
 
 ### 6. Group Members Panel
-![Group Members](./assets/members.png)
+![Group Members](/client/public/members.png)
 
 ### 7. Admin Controls
-![Admin Panel](./assets/adminPanel.png)
+![Admin Panel](/client/public/adminPanel.png)
 
 
 ## ⚙️ Getting Started
