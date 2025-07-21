@@ -24,7 +24,7 @@
 //       const response = await axiosInstance.get("/api/auth/check");
 //       const data = response.data;
 //       // console.log(data);
-      
+
 //       if (data.success) {
 //         setAuthUser(data.data.user);
 //         connectSocket(data.data.user);
@@ -41,7 +41,7 @@
 //     try {
 //       const response = await axiosInstance.post(`/api/auth/${state}`, credentials);
 //       console.log(response);
-      
+
 //       if ((response.data.success)) {
 //         setAuthUser(response.data.data.userData);
 //         connectSocket(response.data.data.userData);
@@ -77,10 +77,10 @@
 //         body
 //       );
 //       // console.log(response);
-      
+
 //       const data = response.data.data;
 //       // console.log(data.user);
-      
+
 //       if (data.success) {
 //         setAuthUser(data.user);
 //         toast.success("Profile updated successfully.");
@@ -100,7 +100,7 @@
 //     });
 //     newSocket.connect();
 //     setSocket(newSocket);
-    
+
 //     newSocket.on("getOnlineUsers", (userIds) => {
 //       setOnlineUsers(userIds);
 //     });
@@ -126,8 +126,6 @@
 //   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 // };
 
-
-
 // src/context/AuthContext.jsx
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
@@ -141,14 +139,14 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [token] = useState(localStorage.getItem("token"));
   const [authUser, setAuthUser] = useState(null);
-  const [loading, setLoading]   = useState(true);      // ← new
+  const [loading, setLoading] = useState(true); // ← new
   const [socket, setSocket] = useState(null);
   const navigate = useNavigate();
   const [onlineUsers, setOnlineUsers] = useState([]);
 
   const axiosInstance = axios.create({
     baseURL: backendUrl,
-    headers: token ? { token } : {}
+    headers: token ? { token } : {},
   });
 
   const connectSocket = (user) => {
@@ -180,14 +178,17 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (state, credentials) => {
     try {
-      const { data } = await axiosInstance.post(`/api/auth/${state}`, credentials);
+      const { data } = await axiosInstance.post(
+        `/api/auth/${state}`,
+        credentials
+      );
+
       if (data.success) {
         setAuthUser(data.data.userData);
         connectSocket(data.data.userData);
         localStorage.setItem("token", data.data.token);
         axiosInstance.defaults.headers.common["token"] = data.data.token;
         toast.success(data.data.message);
-
       } else {
         toast.error(data.message);
       }
@@ -207,7 +208,10 @@ export const AuthProvider = ({ children }) => {
 
   const updateProfile = async (body) => {
     try {
-      const { data } = await axiosInstance.put("/api/auth/update-profile", body);
+      const { data } = await axiosInstance.put(
+        "/api/auth/update-profile",
+        body
+      );
       if (data.data.success) {
         setAuthUser(data.data.user);
         toast.success("Profile updated successfully.");
@@ -221,14 +225,14 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider
       value={{
         authUser,
-        loading,            // ← expose loading
+        loading, // ← expose loading
         axiosInstance,
         onlineUsers,
         socket,
         navigate,
         login,
         logout,
-        updateProfile
+        updateProfile,
       }}
     >
       {children}
