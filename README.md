@@ -46,27 +46,50 @@ You can try the live version of this project here:
 
 ## 🖼️ Screenshots
 
-### 1. Register Page
-![Login](./client/public/register.png)
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center">
+      <strong>Register Page</strong><br>
+      <img src="./client/public/register.png" alt="Register" width="300"/>
+    </td>
+    <td align="center">
+      <strong>Login Page</strong><br>
+      <img src="./client/public/login.png" alt="Login" width="300"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Profile Page</strong><br>
+      <img src="./client/public/editProfile.png" alt="Profile" width="300"/>
+    </td>
+    <td align="center">
+      <strong>Home Page</strong><br>
+      <img src="./client/public/chat.png" alt="Home" width="300"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Group Chat</strong><br>
+      <img src="./client/public/groupChat.png" alt="Group Chat" width="300"/>
+    </td>
+    <td align="center">
+      <strong>Group Members</strong><br>
+      <img src="./client/public/members.png" alt="Group Members" width="300"/>
+    </td>
+  </tr>
+</table>
+
+<br/><br/>
+
+### 🛠️ Admin Controls Panel (Full View)
+
+<img src="./client/public/adminPanel.png" alt="Admin Panel" width="300" height="600"/>
+
+</div>
 
 
-### 2. Login Page
-![Home](./client/public/login.png)
-
-### 3. Profile Page
-![Profile](/client/public/editProfile.png)
-
-### 4. Home Page
-![Home](/client/public/chat.png)
-
-### 5. Group Chat
-![Group Chat](/client/public/groupChat.png)
-
-### 6. Group Members Panel
-![Group Members](/client/public/members.png)
-
-### 7. Admin Controls
-![Admin Panel](/client/public/adminPanel.png)
 
 
 ## ⚙️ Getting Started
