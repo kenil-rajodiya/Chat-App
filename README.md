@@ -2,9 +2,13 @@
 
 A powerful full-stack real-time messaging app built with the **MERN stack (MongoDB, Express, React, Node.js)** and **Socket.IO**. It supports one-on-one and group chats, live online user tracking, typing indicators, profile management, and more — all in a beautifully responsive UI.
 
-![Chat App Preview](./preview.png)
 
 ---
+## 🚀 Live Preview
+
+You can try the live version of this project here:
+
+🔗 [Click to Visit the Live App](https://chat-app-frontend-ten-eta.vercel.app/login)
 
 ## 🚀 Features
 
@@ -39,6 +43,54 @@ A powerful full-stack real-time messaging app built with the **MERN stack (Mongo
 | React Router DOM| MongoDB Atlas | JWT Auth   |                 |
 
 ---
+
+## 🖼️ Screenshots
+
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center">
+      <strong>Register Page</strong><br>
+      <img src="./client/public/register.png" alt="Register" width="300"/>
+    </td>
+    <td align="center">
+      <strong>Login Page</strong><br>
+      <img src="./client/public/login.png" alt="Login" width="300"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Profile Page</strong><br>
+      <img src="./client/public/editProfile.png" alt="Profile" width="300"/>
+    </td>
+    <td align="center">
+      <strong>Home Page</strong><br>
+      <img src="./client/public/chat.png" alt="Home" width="300"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Group Chat</strong><br>
+      <img src="./client/public/groupChat.png" alt="Group Chat" width="300"/>
+    </td>
+    <td align="center">
+      <strong>Group Members</strong><br>
+      <img src="./client/public/members.png" alt="Group Members" width="300"/>
+    </td>
+  </tr>
+</table>
+
+<br/><br/>
+
+### 🛠️ Admin Controls Panel (Full View)
+
+<img src="./client/public/adminPanel.png" alt="Admin Panel" width="300" height="600"/>
+
+</div>
+
+
+
 
 ## ⚙️ Getting Started
 
