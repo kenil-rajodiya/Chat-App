@@ -9,7 +9,7 @@ const Sidebar = () => {
   const { logout, onlineUsers } = useContext(AuthContext);
   const [input, SetInput] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef(); // ✅ ref for menu
+  const menuRef = useRef(); 
 
   const {
     getUsers,

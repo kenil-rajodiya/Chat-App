@@ -307,7 +307,7 @@ export const deleteGroup = async (req, res) => {
 
         const response = await Group.findByIdAndDelete(groupId);
 
-        // Optional: Delete group messages or logs if needed here
+       
 
         res.json(new ApiResponse(200, response, "Group deleted successfully."));
     } catch (error) {

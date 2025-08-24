@@ -4,7 +4,7 @@ import { formateMessageTime } from "../lib/utils.js";
 import { AuthContext } from "../../context/AuthContext.jsx";
 import { ChatContext } from "../../context/ChatContext.jsx";
 import toast from "react-hot-toast";
-import MobileMedia from "./MobileMedia"; // ✅ import added
+import MobileMedia from "./MobileMedia"; 
 
 const ChatContainer = () => {
   const { messages, selectedUser, setSelectedUser, sendMessage, getMessages } =

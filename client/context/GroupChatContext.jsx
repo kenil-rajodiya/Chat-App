@@ -13,7 +13,6 @@ export const GroupChatProvider = ({ children }) => {
   const [members, setMembers] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
 
-  // ✅ Get all groups
   const getGroups = async () => {
     try {
       const res = await axiosInstance.get("/api/group/get");
@@ -26,7 +25,6 @@ export const GroupChatProvider = ({ children }) => {
     }
   };
 
-  // ✅ Get group messages
   const getGroupMessages = async (groupId) => {
     try {
       if (!groupId) return;
@@ -40,7 +38,7 @@ export const GroupChatProvider = ({ children }) => {
     }
   };
 
-  // ✅ Send a message
+
   const sendGroupMessage = async (messageData) => {
     try {
       if (!selectedGroup || !messageData) return;
@@ -70,7 +68,7 @@ export const GroupChatProvider = ({ children }) => {
     }
   };
 
-  // ✅ Leave group
+
   const leaveGroup = async () => {
     if (isAdmin) {
       toast.error("Transfer admin rights before leaving.");
@@ -88,7 +86,7 @@ export const GroupChatProvider = ({ children }) => {
     }
   };
 
-  // ✅ Remove a member
+
   const removeMember = async (id) => {
     if (!isAdmin) {
       toast.error("Only Admin can remove members.");
@@ -112,7 +110,7 @@ export const GroupChatProvider = ({ children }) => {
     }));
   };
 
-  // Edit group name
+
   const editNameOfGroup = async (name) => {
     try {
       const res = await axiosInstance.put(
@@ -128,7 +126,7 @@ export const GroupChatProvider = ({ children }) => {
     }
   };
 
-  // ✅ Add a member
+
   const addMember = async (memberId) => {
     if (!selectedGroup?._id) {
       toast.error("Select a group first.");
@@ -151,7 +149,7 @@ export const GroupChatProvider = ({ children }) => {
     }
   };
 
-  // Change admin function
+
   const changeAdmin = async (newAdminId) => {
     const res = await axiosInstance.put(
       `/api/group/changeAdmin/${selectedGroup?._id}`,
@@ -169,7 +167,7 @@ export const GroupChatProvider = ({ children }) => {
     }
   };
 
-  // ✅ Socket: join/leave group
+
   useEffect(() => {
     if (!socket || !selectedGroup?._id) return;
 
@@ -179,7 +177,7 @@ export const GroupChatProvider = ({ children }) => {
     };
   }, [socket, selectedGroup]);
 
-  // ✅ Socket: listen for group messages
+
   useEffect(() => {
     if (!socket) return;
 

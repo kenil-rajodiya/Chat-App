@@ -5,7 +5,6 @@ import bcrypt from 'bcryptjs'
 import { generateToken } from "../utils/createToken.js";
 import cloudinary from "../utils/cloudinary.js";
 
-// user signup
 export const signup = async (req, res) => {
     const { fullName, email, password, bio } = req.body;
     try {
@@ -43,7 +42,6 @@ export const signup = async (req, res) => {
     
 }
 
-//User login
 
 export const login = async (req, res) => {
     try {
@@ -77,7 +75,6 @@ export const login = async (req, res) => {
     }
 }
 
-// user authentication  
 export const checkAuth = (req, res) => {
    return  res.json(
         new ApiResponse(200, {user : req.user})
@@ -85,7 +82,6 @@ export const checkAuth = (req, res) => {
     
 }
 
-// For user profile updates
 export const updateProfile = async (req, res) => {
     try {
         console.log(req.body);
